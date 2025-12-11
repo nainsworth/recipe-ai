@@ -4,7 +4,6 @@ const SYSTEM_PROMPT = `You are an assistant that receives a list of ingredients 
 
 const anthropic = new Anthropic({
   apiKey: import.meta.env.VITE_ANTHROPIC_API_KEY,
-  dangerouslyAllowBrowser: true,
 });
 
 const getRecipeFromAPI = async (ingredients: string[]) => {
