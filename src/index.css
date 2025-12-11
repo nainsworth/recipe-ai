@@ -17,11 +17,14 @@
   scroll-behavior: smooth;
 }
 
-
-
-/* @layer base {
-  html{
-    scroll-behavior: smooth;
+@layer components {
+  .bg-backdrop {
+    @apply bg-neutral-900 backdrop-blur-lg border-b border-neutral-800;
   }
-} */
+}
 
+@layer base {
+  main{
+    @apply flex flex-col  justify-center px-4 py-8 max-w-5xl mx-auto;
+  }
+}
