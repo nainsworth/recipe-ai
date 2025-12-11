@@ -1,6 +1,10 @@
 import { Flame, Sparkles } from "lucide-react";
 
-const GetRecipe = () => {
+type Props = {
+  getRecipe: () => void;
+};
+
+const GenerateRecipe = ({ getRecipe }: Props) => {
   return (
     <div className="bg-backdrop rounded-2xl border-emerald-400/30 p-6 sm:py-8 sm:px-12 flex flex-col sm:flex-row justify-between items-center gap-8 flex-1">
       <div className="self-start">
@@ -13,11 +17,14 @@ const GetRecipe = () => {
           Generate a recipe from you list of ingredients
         </p>
       </div>
-      <button className="primary-btn flex gap-2 justify-center items-center flex-0">
+      <button
+        className="primary-btn flex gap-2 justify-center items-center flex-0"
+        onClick={getRecipe}
+      >
         <Flame /> Get a Recipe
       </button>
     </div>
   );
 };
 
-export default GetRecipe;
+export default GenerateRecipe;
