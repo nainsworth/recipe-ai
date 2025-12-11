@@ -17,14 +17,19 @@
   scroll-behavior: smooth;
 }
 
-@layer components {
-  .bg-backdrop {
-    @apply bg-neutral-900 backdrop-blur-lg border-b border-neutral-800;
-  }
-}
-
 @layer base {
-  main{
+  main {
     @apply flex flex-col  justify-center px-4 py-8 max-w-5xl mx-auto;
   }
 }
+
+@layer components {
+  .bg-backdrop {
+    @apply bg-neutral-900 backdrop-blur-lg border border-neutral-800;
+  }
+  .ingredient-list > li {
+    @apply text-lg capitalize bg-neutral-900 backdrop-blur-lg border border-neutral-800 rounded-2xl p-4;
+  }
+}
+
+
