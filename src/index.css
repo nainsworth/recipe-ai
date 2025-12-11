@@ -19,7 +19,7 @@
 
 @layer base {
   main {
-    @apply flex flex-col  justify-center px-4 py-8 max-w-5xl mx-auto;
+    @apply flex flex-col  justify-center px-4 sm:px-8 py-8 max-w-4xl mx-auto;
   }
 }
 
@@ -29,6 +29,9 @@
   }
   .ingredient-list > li {
     @apply text-lg capitalize bg-neutral-900 backdrop-blur-lg border border-neutral-800 rounded-2xl p-4;
+  }
+  .primary-btn {
+    @apply bg-emerald-600 text-black font-semibold text-lg w-full h-full sm:max-w-40  p-3 rounded-xl cursor-pointer hover:bg-emerald-800 transition-colors duration-300;
   }
 }
 
