@@ -9,7 +9,7 @@ const IngredientForm = () => {
       <input
         type="text"
         placeholder="e.g. chicken breast, rice, spinach..."
-        className="bg-black border border-neutral-800 w-full h-full px-6 py-4 rounded-xl xs:text-base sm:text-xl focus:outline-emerald-400 flex-1"
+        className="bg-black border border-neutral-800 w-full h-full px-6 py-4 rounded-xl xs:text-base sm:text-xl outline-none focus:border-emerald-400 flex-1"
       />
       <button className="primary-btn flex-0 flex gap-2 justify-center items-center">
         <Plus /> Add
