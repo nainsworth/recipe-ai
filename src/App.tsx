@@ -28,14 +28,13 @@ function App() {
 
   return (
     <>
-      <main className="flex flex-col gap-12">
-        <IngredientForm addIngredient={addIngredient} />
-        <IngredientList ingredients={ingredients} />
-
-        {ingredients.length > 3 && <GenerateRecipe getRecipe={getRecipe} />}
-
-        {/* generated recipe */}
-        {recipe && <Recipe recipe={recipe} />}
+      <main>
+        <div className="main-container">
+          <IngredientForm addIngredient={addIngredient} />
+          <IngredientList ingredients={ingredients} />
+          {ingredients.length > 3 && <GenerateRecipe getRecipe={getRecipe} />}
+          {recipe && <Recipe recipe={recipe} />}
+        </div>
       </main>
     </>
   );

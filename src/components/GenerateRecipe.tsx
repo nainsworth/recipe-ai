@@ -19,7 +19,7 @@ const GenerateRecipe = ({ getRecipe }: Props) => {
       </div>
       <button
         className="primary-btn flex gap-2 justify-center items-center flex-0"
-        onClick={getRecipe}
+        onClick={() => getRecipe()}
       >
         <Flame /> Get a Recipe
       </button>

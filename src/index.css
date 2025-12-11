@@ -6,7 +6,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  @apply bg-linear-to-b text-green-50 from-neutral-950 via-black to-neutral-900 text-base min-h-screen;
+  @apply text-green-50  text-base min-h-dvh h-full;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,7 +18,7 @@
 
 @layer base {
   main {
-    @apply flex flex-col  justify-center px-4 sm:px-8 py-8 max-w-4xl mx-auto;
+    @apply bg-linear-to-b from-neutral-950 via-black to-neutral-900;
   }
   table {
     @apply border-collapse border w-full min-[598px]:max-w-72 md:absolute md:top-60 md:right-12;
@@ -31,7 +31,7 @@
   }
   th,
   td {
-    @apply  py-2 px-4 text-center first-of-type:sm:text-left;
+    @apply py-2 px-4 text-center first-of-type:sm:text-left;
   }
   strong {
     @apply text-emerald-400;
@@ -39,6 +39,9 @@
 }
 
 @layer components {
+  .main-container {
+    @apply flex flex-col justify-center px-4 sm:px-8 py-8 max-w-4xl mx-auto gap-12;
+  }
   .bg-backdrop {
     @apply bg-neutral-900 backdrop-blur-lg border border-neutral-800;
   }
