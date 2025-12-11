@@ -9,7 +9,7 @@ const Recipe = ({ recipe }: Props) => {
   return (
     <div className="generated-recipe bg-backdrop rounded-2xl flex flex-col gap-4 p-6 sm:p-10 text-lg">
       <Markdown remarkPlugins={[remarkGfm]}>{recipe}</Markdown>
-      <p>Enjoy! ;)</p>
+      <p className="text-emerald-400 font-semibold text-xl my-2">Enjoy! ;)</p>
     </div>
   );
 };
