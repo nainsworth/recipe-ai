@@ -1,4 +1,4 @@
-import { Sparkles, Zap } from "lucide-react";
+import { Flame, Sparkles, Zap } from "lucide-react";
 import IngredientForm from "./components/IngredientForm";
 
 function App() {
@@ -28,9 +28,9 @@ function App() {
         </div>
 
         {/* generate button */}
-        <div className="bg-backdrop rounded-2xl border-emerald-400/30 p-6 sm:py-8 sm:px-12 flex flex-col sm:flex-row justify-between items-center gap-8 ">
+        <div className="bg-backdrop rounded-2xl border-emerald-400/30 p-6 sm:py-8 sm:px-12 flex flex-col sm:flex-row justify-between items-center gap-8 flex-1">
           <div className="self-start">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-2 flex gap-2">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-2 flex gap-3">
               {" "}
               <Sparkles
                 className="text-emerald-400 max-[360px]:hidden"
@@ -42,7 +42,7 @@ function App() {
               Generate a recipe from you list of ingredients
             </p>
           </div>
-          <button className="primary-btn">Get a Recipe</button>
+          <button className="primary-btn flex gap-2 justify-center items-center flex-0"><Flame /> Get a Recipe</button>
         </div>
 
         {/* generated recipe */}
