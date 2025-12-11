@@ -24,6 +24,7 @@ function App() {
   const getRecipe = async () => {
     const recipeMarkdown = await getRecipeFromAPI(ingredients);
     setRecipe(recipeMarkdown);
+    
   };
 
   return (

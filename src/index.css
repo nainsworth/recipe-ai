@@ -18,7 +18,7 @@
 
 @layer base {
   main {
-    @apply bg-linear-to-b from-neutral-950 via-black to-neutral-900;
+    @apply bg-linear-to-b from-neutral-950 via-black to-neutral-900 min-h-dvh h-full;
   }
   table {
     @apply border-collapse border w-full min-[598px]:max-w-72 md:absolute md:top-60 md:right-12;
