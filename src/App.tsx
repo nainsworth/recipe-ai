@@ -6,12 +6,7 @@ import Recipe from "./components/Recipe";
 import { getRecipeFromAPI } from "./ai";
 
 function App() {
-  const [ingredients, setIngredients] = useState<string[]>([
-    "chicken breast",
-    "rice",
-    "spinach",
-    "broccoli",
-  ]);
+  const [ingredients, setIngredients] = useState<string[]>([]);
   const [recipe, setRecipe] = useState<string>("");
 
   const addIngredient = (formData: FormData) => {
@@ -35,7 +30,7 @@ function App() {
     <>
       <main className="flex flex-col gap-12">
         <IngredientForm addIngredient={addIngredient} />
-        {ingredients.length > 0 && <IngredientList ingredients={ingredients} />}
+        <IngredientList ingredients={ingredients} />
 
         {ingredients.length > 3 && <GenerateRecipe getRecipe={getRecipe} />}
 
