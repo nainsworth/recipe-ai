@@ -3,7 +3,7 @@ import GenerateRecipe from "./components/GenerateRecipe";
 import IngredientForm from "./components/IngredientForm";
 import IngredientList from "./components/IngredientList";
 import Recipe from "./components/Recipe";
-import { getRecipeFromAPI } from "./ai";
+import { getRecipeFromAPI } from "./utils/recipeAPI";
 
 function App() {
   const [ingredients, setIngredients] = useState<string[]>([]);
@@ -22,9 +22,13 @@ function App() {
   };
 
   const getRecipe = async () => {
-    const recipeMarkdown = await getRecipeFromAPI(ingredients);
-    setRecipe(recipeMarkdown);
-    
+    try {
+      const recipeMarkdown = await getRecipeFromAPI(ingredients);
+      setRecipe(recipeMarkdown);
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to generate recipe.");
+    }
   };
 
   return (
