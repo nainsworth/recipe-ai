@@ -3,7 +3,6 @@ import GenerateRecipe from "./components/GenerateRecipe";
 import IngredientForm from "./components/IngredientForm";
 import IngredientList from "./components/IngredientList";
 import Recipe from "./components/Recipe";
-import { getRecipeFromAPI } from "../api/anthropic";
 
 function App() {
   const [ingredients, setIngredients] = useState<string[]>([]);
@@ -22,8 +21,23 @@ function App() {
   };
 
   const getRecipe = async () => {
-    const recipeMarkdown = await getRecipeFromAPI(ingredients);
-    setRecipe(recipeMarkdown);
+    try {
+      const response = await fetch("/api/recipe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ingredients }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to generate recipe");
+      }
+
+      const data = await response.json();
+      setRecipe(data.recipe);
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to generate recipe. Please try again.");
+    }
   };
 
   return (
